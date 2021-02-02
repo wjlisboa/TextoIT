@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.textoit.dto.IntervalProducerDTO;
 import com.textoit.dto.MinMaxIntervalProducerDTO;
+import com.textoit.entities.Winner;
 import com.textoit.repositories.WinnerRepository;
 
 @Service
@@ -19,6 +20,10 @@ public class WinnerService {
 	
 	@Transactional(readOnly = true)
 	public MinMaxIntervalProducerDTO getMinMax() {
+		
+		//winners with more than 1 win
+		List<Winner> winners = repository.getWinners();
+		
 		MinMaxIntervalProducerDTO result = new MinMaxIntervalProducerDTO();
 		
 		List<IntervalProducerDTO> min = new ArrayList<>();
