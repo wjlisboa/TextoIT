@@ -12,7 +12,7 @@ import com.textoit.dto.MinMaxIntervalProducerDTO;
 import com.textoit.services.WinnerService;
 
 @RestController
-@RequestMapping("/winner")
+@RequestMapping("/api/winner")
 public class WinnerController {
 
 	@Autowired

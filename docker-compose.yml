@@ -1,0 +1,9 @@
+version: '3'
+services:
+  app:
+    image: maven:3.6.3-openjdk-11-slim
+    command: bash -c 'cd tmp && mvn spring-boot:run'
+    volumes:
+      - .:/tmp
+    ports:
+      - "8080:8080"
