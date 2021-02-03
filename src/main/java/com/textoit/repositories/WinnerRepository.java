@@ -9,7 +9,7 @@ import com.textoit.entities.Winner;
 
 public interface WinnerRepository extends JpaRepository<Winner, Long> {
 	
-	@Query(value = "from Winner where nameProducer in (select nameProducer from Winner group by nameProducer having count(0) > 1)")
+	@Query(value = "from Winner where nameProducer in (select nameProducer from Winner group by nameProducer having count(0) > 1) order by nameProducer, year")
 	List<Winner> getWinners();
 
 }
